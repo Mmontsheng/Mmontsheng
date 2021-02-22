@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+  profile:
+    image: profile-image
+    container_name: profile-container
+    build:
+      context: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.profile.entrypoints=http"
+      - "traefik.http.routers.profile.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.profile.middlewares=HTTPS-only@file"
+      - "traefik.http.routers.profile-secure.entrypoints=https"
+      - "traefik.http.routers.profile-secure.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.profile-secure.tls=true"
+      - "traefik.http.routers.profile-secure.tls.certresolver=http"
+      - "traefik.http.routers.profile-secure.service=api@internal"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: 
+      name: traefik-public
