@@ -15,7 +15,6 @@ services:
       - "traefik.http.routers.profile-secure.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.profile-secure.tls=true"
       - "traefik.http.routers.profile-secure.tls.certresolver=http"
-      - "traefik.http.routers.profile-secure.service=api@internal"
     networks:
       - traefik-public
 
