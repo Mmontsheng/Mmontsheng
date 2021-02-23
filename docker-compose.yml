@@ -7,14 +7,15 @@ services:
     build:
       context: .
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.profile.entrypoints=http"
-      - "traefik.http.routers.profile.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.profile.middlewares=HTTPS-only@file"
-      - "traefik.http.routers.profile-secure.entrypoints=https"
-      - "traefik.http.routers.profile-secure.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.profile-secure.tls=true"
-      - "traefik.http.routers.profile-secure.tls.certresolver=http"
+      - traefik.enable=true
+      - traefik.http.routers.profile.entrypoints=http
+      - traefik.http.routers.profile.rule=Host(`${DOMAIN}`)
+      - traefik.http.services.profile.loadbalancer.server.port=80
+      # - "traefik.http.routers.profile.middlewares=HTTPS-only@file"
+      # - "traefik.http.routers.profile-secure.entrypoints=https"
+      # - "traefik.http.routers.profile-secure.rule=Host(`${DOMAIN}`)"
+      # - "traefik.http.routers.profile-secure.tls=true"
+      # - "traefik.http.routers.profile-secure.tls.certresolver=http"
     networks:
       - traefik-public
 
