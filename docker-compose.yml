@@ -1,25 +1,22 @@
-version: '3'
-
-services: 
+services:
   profile:
     image: profile-image
     container_name: profile-container
     build:
       context: .
     labels:
+      - traefik.docker.network=traefik-public
       - traefik.enable=true
-      - traefik.http.routers.profile.entrypoints=http
       - traefik.http.routers.profile.rule=Host(`${DOMAIN}`)
-      - traefik.http.services.profile.loadbalancer.server.port=80
-      # - "traefik.http.routers.profile.middlewares=HTTPS-only@file"
-      # - "traefik.http.routers.profile-secure.entrypoints=https"
-      # - "traefik.http.routers.profile-secure.rule=Host(`${DOMAIN}`)"
-      # - "traefik.http.routers.profile-secure.tls=true"
-      # - "traefik.http.routers.profile-secure.tls.certresolver=http"
+      - traefik.http.routers.profile.middlewares=redirect@file
+      - traefik.http.routers.profile.entrypoints=http
+      - traefik.http.routers.profile_secure.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.profile_secure.tls=true
+      - traefik.http.routers.profile_secure.entrypoints=https
     networks:
       - traefik-public
 
 networks:
   traefik-public:
-    external: 
+    external:
       name: traefik-public
