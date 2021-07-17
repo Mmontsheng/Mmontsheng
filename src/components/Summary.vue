@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5 id="about">A little about my self</h5>
-    <p>I'm a Junior Java and Vue Js Developer at AfriGIS,
+    <p>I'm a Java Developer at AfriGIS,
       a Geographic Information Systems company based in Pretoria. I studied National
       Diploma: Computer Systems at the University of Johannesburg. Majoring in Database design,
       systems design and software development
