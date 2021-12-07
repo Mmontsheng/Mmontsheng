@@ -20,6 +20,10 @@ export default {
           title: 'Java',
         },
         {
+          name: 'devicon-spring-plain-wordmark',
+          title: 'Spring Boot',
+        },
+        {
           name: 'devicon-javascript-plain',
           title: 'JavaScript',
         },
@@ -36,16 +40,20 @@ export default {
           title: 'Node Js',
         },
         {
+          name: 'devicon-flutter-plain',
+          title: 'Flutter',
+        },
+        {
           name: 'devicon-postgresql-plain-wordmark',
           title: 'Postgre SQL',
         },
         {
-          name: 'devicon-git-plain-wordmark',
-          title: 'GIT',
-        },
-        {
           name: 'devicon-mysql-plain-wordmark',
           title: 'My SQL',
+        },
+        {
+          name: 'devicon-git-plain-wordmark',
+          title: 'GIT',
         },
         {
           name: 'devicon-bash-plain',
@@ -60,7 +68,7 @@ export default {
 <style scoped>
 i {
   padding-right: 10px;
-  font-size: 40px;
+  font-size: 33px;
 }
 @media screen and (max-width: 500px) {
   i {
