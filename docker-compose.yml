@@ -2,6 +2,7 @@ services:
   profile:
     image: profile-image
     container_name: profile-container
+    restart: unless-stopped
     build:
       context: .
     labels:
