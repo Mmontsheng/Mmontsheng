@@ -6,6 +6,7 @@
       v-for="(link, index) in links"
     >
       <a
+        @click="toSocial(link)"
         :href="link.href"
         target="_blank">
         <icon :name="link.fa" />
@@ -15,6 +16,8 @@
 </template>
 
 <script>
+import splitbee from '@splitbee/web';
+
 export default {
   computed: {
     links() {
@@ -22,12 +25,21 @@ export default {
         {
           fa: 'fab fa-github',
           href: 'https://github.com/Mmontsheng',
+          name: 'github',
         },
         {
           fa: 'fab fa-linkedin-in',
           href: 'https://www.linkedin.com/in/mmontsheng-maoto-77204571/',
+          name: 'linkedin',
         },
       ];
+    },
+  },
+  methods: {
+    toSocial(social) {
+      splitbee.track('SOCIAL_LINK_CLICK', {
+        name: social.name,
+      });
     },
   },
   name: 'Social',
