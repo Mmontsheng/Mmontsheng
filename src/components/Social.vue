@@ -1,7 +1,7 @@
 <template>
-  <ul class="social pl-0">
+  <ul class="pl-0">
     <li
-      class="pl-4"
+      class="pr-3"
       :key="index"
       v-for="(link, index) in links"
     >
@@ -29,8 +29,13 @@ export default {
         },
         {
           fa: 'fab fa-linkedin-in',
-          href: 'https://www.linkedin.com/in/mmontsheng-maoto-77204571/',
+          href: 'https://www.linkedin.com/in/mmontshengmaoto',
           name: 'linkedin',
+        },
+        {
+          fa: 'fab fa-twitter',
+          href: 'https://twitter.com/mmontshengmaoto',
+          name: 'twitter',
         },
       ];
     },

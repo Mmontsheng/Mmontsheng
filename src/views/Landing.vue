@@ -3,29 +3,19 @@
     <h1 class="mb-2">Hi, I'm</h1>
     <h1 class="mb-2">Mmontsheng Maoto</h1>
     <Summary />
-    <skills id="skills"/>
+    <social />
   </div>
 </template>
 
 <script>
-import Skills from '@/components/Skills.vue';
 import Summary from '@/components/Summary.vue';
+import Social from '@/components/Social.vue';
 
 export default {
   components: {
-    Skills,
     Summary,
+    Social,
   },
   name: 'landing',
 };
 </script>
-
-<style scoped>
-#skills {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  background: #000;
-  width: 100%;
-}
-</style>

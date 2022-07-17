@@ -25,16 +25,3 @@ export default {
   name: 'PageNotFound',
 };
 </script>
-
-<style scoped>
-  .btn {
-    color: #fff;
-    border:  1px solid #fff;
-    transition: all 0.5s ease-out;
-  }
-
-  .btn:hover {
-    background-color: #fff;
-    color: #000;
-  }
-</style>

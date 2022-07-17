@@ -3,9 +3,13 @@
 </template>
 
 <script>
+import cssVars from 'css-vars-ponyfill/dist/css-vars-ponyfill';
 
 export default {
   name: 'App',
+  mounted() {
+    cssVars();
+  },
 };
 </script>
 
