@@ -1,6 +1,14 @@
 services:
   profile:
     image: profile-image
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
     container_name: profile-container
     restart: unless-stopped
     build:
