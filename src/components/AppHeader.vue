@@ -24,9 +24,16 @@
           :active="isLinkActive(link.to)"
           :to="link.to"
           :key="index"
+          :target="_black"
           v-for="(link, index) in links"
         >
           {{ link.text }}
+        </b-nav-item>
+        <b-nav-item
+          target="_black"
+          href="https://store.mmontshengmaoto.dev/"
+        >
+          Store
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
